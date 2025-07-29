@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crack Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Crack Results</h1>
+        <div class="result">
+            {% if password %}
+                <p><strong>Password found:</strong> {{ password }}</p>
+            {% else %}
+                <p>Password not found in the provided wordlist.</p>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('index') }}" class="button-link">Try another hash</a>
+    </div>
+</body>
+</html>

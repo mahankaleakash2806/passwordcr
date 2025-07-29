@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hash Password Cracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Universal Hash Password Cracker</h1>
+        <form action="/crack" method="post" enctype="multipart/form-data">
+            <label for="hash">Enter Hash:</label>
+            <input type="text" id="hash" name="hash" required />
+
+            <label for="algorithm">Select Hash Algorithm:</label>
+            <select id="algorithm" name="algorithm" required>
+                <option value="md5">MD5</option>
+                <option value="sha1">SHA1</option>
+                <option value="sha256">SHA256</option>
+                <option value="bcrypt">Bcrypt</option>
+                <option value="argon2">Argon2</option>
+                <option value="pbkdf2">PBKDF2</option>
+            </select>
+
+            <label for="wordlist">Upload Wordlist (optional):</label>
+            <input type="file" id="wordlist" name="wordlist" accept=".txt" />
+
+            <button type="submit">Crack Password</button>
+        </form>
+    </div>
+</body>
+</html>
