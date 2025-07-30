@@ -1,4 +1,4 @@
-from utils import lookup
+#from utils import lookup
 from flask import Flask, render_template, request, redirect, url_for, flash
 from hash_crackers import crack_md5, crack_sha1, crack_sha256, crack_bcrypt, crack_argon2, crack_pbkdf2
 from utils.cracker import crack_password
